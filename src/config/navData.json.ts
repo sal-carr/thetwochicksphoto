@@ -18,14 +18,18 @@ const navConfig: navItem[] = [
 		link: "/",
 	},
 	{
-		text: "portfolios",
+		text: "portfolio",
 		link: "/portfolio/",
 	},
 	{
-		text: "Pricing",
+		text: "Packages",
 		link: "/#pricing",
 	},
 	{
+		text: "Contact Us",
+		link: "/#contact",
+	},
+	/* {
 		text: "Pages",
 		dropdown: [
 			{
@@ -45,7 +49,7 @@ const navConfig: navItem[] = [
 				link: "/not-a-link/",
 			},
 		],
-	},
+	}, */
 ];
 
 export default navConfig;

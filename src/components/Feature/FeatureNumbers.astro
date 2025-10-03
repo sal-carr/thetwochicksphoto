@@ -14,33 +14,31 @@ interface FeatureCardData {
 // NOTE: You still need to manually update the heading that come before the cards
 const featureData: FeatureCardData[] = [
 	{
-		largeText: "20",
-		description: `Years Experience`,
+		largeText: "10+",
+		description: `Years of Shared Experience`,
 	},
 	{
-		largeText: "20K",
+		largeText: "100+",
 		description: `Photos Delivered`,
 	},
+
 	{
-		largeText: "425",
-		description: `Events Captured`,
-	},
-	{
-		largeText: "22",
-		description: `Locations`,
+		largeText: "nj+pa",
+		description: `& Surrounding Areas`,
 	},
 ];
 ---
 
+
 <section id="feature-numbers" class="bg-base-100 scroll-mt-10 py-8 md:py-12">
 	<div class="mx-auto max-w-6xl px-4">
 		<div class="text-prety mr-auto text-center">
-			<h2 class="h2">Capture your love story with an experienced, client centered photographer</h2>
+			<h2 class="h2">Turning fleeting moments into forever memories through warm, natural, and joy-filled photography sessions for families, newborns, and parents-to-be.</h2>
 		</div>
 
 		<div
 			id="feature-numbers-cards"
-			class="mt-6 grid gap-10 gap-y-16 sm:grid-cols-2 md:mt-12 lg:grid-cols-4"
+			class="mt-6 grid gap-10 gap-y-16 sm:grid-cols-2 md:mt-12 lg:grid-cols-3"
 		>
 			{
 				featureData.map((feature, idx) => (
@@ -48,5 +46,7 @@ const featureData: FeatureCardData[] = [
 				))
 			}
 		</div>
+	
 	</div>
 </section>
+

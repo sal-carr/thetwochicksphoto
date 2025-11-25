@@ -1,1 +1,47 @@
-Sitemap: https://horizon.cosmicthemes.com/sitemap-index.xml
+# robots.txt for The Two Chicks Photography
+# This file tells crawlers which parts of the site may be crawled.
+# Keep your sitemap updated and expose only public content to search engines and LLM crawlers.
+
+# Preferred sitemap (leave as your canonical sitemap URL)
+Sitemap: https://thetwochicksphotography.com/sitemap-index.xml
+
+# Default rule: allow general crawling of public content
+User-agent: *
+Allow: /
+
+# Disallow common private/admin paths that should not be indexed
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /login/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /private/
+
+# Helpful crawl-delay for smaller hosts (seconds). Some crawlers ignore this.
+# Reduce if you have heavy traffic or remove to let search engines crawl freely.
+Crawl-delay: 5
+
+# Explicitly allow modern LLM-focused crawlers so they can access your public site
+# (granting access helps crawlers that respect robots.txt and can improve coverage in
+# knowledge-index services such as GPT-based crawlers).
+User-agent: gptbot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Optional: allow well-known discovery endpoints (if you publish AI or plugin manifests)
+Allow: /.well-known/
+
+# Host directive (non-standard, used by some crawlers)
+Host: thetwochicksphotography.com
+
+# Notes:
+# - To improve discoverability by LLMs and search engines, also make sure your site
+#   includes structured data (JSON-LD) on HTML pages (LocalBusiness, FAQs, Product, etc.),
+#   a clean sitemap, and high-quality textual content.
+# - This robots.txt grants access to major crawlers; if you prefer to be more restrictive
+#   for any specific bot, add a block for that user-agent and set Disallow accordingly.

@@ -41,27 +41,75 @@ import Button from "@components/Button/Button.astro";
 </form>
 */}
 
-{/* Temporary contact information section */}
-<div class="flex flex-col items-center justify-center gap-8 py-8 text-center">
-	<h3 class="font-heading-1 text-2xl md:text-3xl">Get in Touch</h3>
-	<div class="flex flex-col gap-6">
-		<div class="flex flex-col gap-2">
-			<p class="font-heading-1 text-lg uppercase">Phone</p>
-			<a 
-				href="tel:+18568340760" 
-				class="text-primary-600 text-xl hover:text-primary-500 transition-colors"
-			>
-				(856) 834-0760
-			</a>
+{/* Contact form that builds a mailto link and opens the user's mail client */}
+<form id="contact-form" class="mx-auto w-full max-w-md py-8">
+	<h3 class="font-heading-1 text-2xl md:text-3xl text-center">Contact Us</h3>
+	<p class="description text-center text-sm text-pretty mt-2">Fillling out the form will create a prefilled message with the details we need to best help you. Please review the message and hit <strong>Send</strong> in your mail app to submit your request.</p>
+
+	<div class="mt-6 flex flex-col gap-4">
+		<label class="flex flex-col">
+			<span class="font-heading-1 text-sm uppercase">Type of Photoshoot</span>
+			<select id="photo-type" name="photoType" class="form__input" required>
+				<option value="">Select a service...</option>
+				<option>Newborn</option>
+				<option>Maternity</option>
+				<option>Family</option>
+				<option>Other</option>
+			</select>
+		</label>
+
+		<label class="flex flex-col">
+			<span class="font-heading-1 text-sm uppercase">Area or Location</span>
+			<input id="location" name="location" type="text" class="form__input" placeholder="City / Location" required />
+		</label>
+
+		<label class="flex flex-col">
+			<span class="font-heading-1 text-sm uppercase">Timeline / Dates</span>
+			<input id="dates" name="dates" type="text" class="form__input" placeholder="Preferred dates or timeframe" required />
+		</label>
+
+		<label class="flex flex-col">
+			<span class="font-heading-1 text-sm uppercase">Your Name</span>
+			<input id="sender-name" name="senderName" type="text" class="form__input" placeholder="Your full name" required />
+		</label>
+
+		<div class="flex">
+			<Button variant="primary" type="submit" class="w-full">Send via Email</Button>
 		</div>
-		<div class="flex flex-col gap-2">
-			<p class="font-heading-1 text-lg uppercase">Email</p>
-			<a 
-				href="mailto:thetwochicksphotography@gmail.com" 
-				class="text-primary-600 text-xl hover:text-primary-500 transition-colors"
-			>
-				thetwochicksphotography@gmail.com
-			</a>
+
+		<div class="flex">
+			<Button variant="outline" href="tel:+18568340760" class="w-full mt-3">Call (856) 834-0760</Button>
 		</div>
 	</div>
-</div>
+</form>
+
+<script>
+function handleSubmit(event) {
+	event.preventDefault();
+	const formEl = document.getElementById('contact-form') as HTMLFormElement | null;
+	if (!formEl) return;
+	if (!formEl.checkValidity()) {
+		formEl.reportValidity();
+		return;
+	}
+
+	const type = ((document.getElementById('photo-type') as HTMLSelectElement | null)?.value || '').trim();
+	const location = ((document.getElementById('location') as HTMLInputElement | null)?.value || '').trim();
+	const dates = ((document.getElementById('dates') as HTMLInputElement | null)?.value || '').trim();
+	const name = ((document.getElementById('sender-name') as HTMLInputElement | null)?.value || '').trim();
+
+    const subject = 'Quote Request';
+    const body = `Hello,\n\nI'm interested in a quote from The Two Chicks Photography.\n\nType of Photoshoot: ${type}\nArea or Location: ${location}\nTimeline/Dates: ${dates}\n\nThank you,\n${name}`;
+
+    const mailto = `mailto:thetwochicksphotography@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Open the user's mail client
+    window.location.href = mailto;
+}
+
+// attach listener after script loads
+const _form = document.getElementById('contact-form');
+if (_form) {
+	_form.addEventListener('submit', handleSubmit);
+}
+</script>

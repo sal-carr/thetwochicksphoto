@@ -1,6 +1,6 @@
 ---
 title: Kellie & Bryan
-testimonial: Kim and Lindsay are the perfect team to help capture all of life’s precious moments. We’ve done both a maternity and newborn session, and the pictures show just how thoughtful, patient, and kind they are when taking your photos... We’ll cherish these pictures for a lifetime and will definitely be using them again for future pictures
+testimonial: The Two Chicks Photography are wonderful! They photographed my family of 15 and not only took great group photos but managed to capture the smaller personal moments as well. The special smiles between grandparents and kids, mother and daughter and grandparents who have been married for 57 years. These images are exactly what we were hoping for. Thank you!
 image: ./familyphoto.jpg
 order: 1
 ---

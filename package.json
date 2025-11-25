@@ -6,6 +6,7 @@
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
+		"postbuild": "node ./scripts/generate-sitemap.mjs",
 		"preview": "astro preview",
 		"astro": "astro",
 		"format": "eslint . --fix && prettier -w \"**/*\" --ignore-unknown --cache",

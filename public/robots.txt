@@ -3,7 +3,7 @@
 # Keep your sitemap updated and expose only public content to search engines and LLM crawlers.
 
 # Preferred sitemap (leave as your canonical sitemap URL)
-Sitemap: https://thetwochicksphotography.com/sitemap-index.xml
+Sitemap: https://thetwochicksphotography.com/sitemap.xml
 
 # Default rule: allow general crawling of public content
 User-agent: *
